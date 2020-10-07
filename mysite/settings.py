@@ -25,7 +25,7 @@ SECRET_KEY = 'l#d)=k3^2f9^39&__hb26y@cf+p95jv#g=p67-5yf9a1gi-$1+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'wichit2s.pythonanywhere.com']
+ALLOWED_HOSTS = [u'wichit2s.pythonanywhere.com',u'localhost',u'127.0.0.1']
 
 
 # Application definition
@@ -118,7 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 STATIC_URL = '/static/'
+
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info

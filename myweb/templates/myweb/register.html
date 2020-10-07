@@ -1,0 +1,112 @@
+{% extends "myweb/baseUser.html"%}
+
+
+{% block title %} Register To The Moon {% endblock %}
+
+
+{% block content %}
+
+<form  method="POST" action="" class="login100-form validate-form flex-sb flex-w" >
+    {% csrf_token %}
+
+	<span class="login100-form-title p-b-51">
+		Register To The Moon
+	</span>
+
+	
+	<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+        <input class="input100" type="text" name="username" placeholder="Username">
+		<span class="focus-input100"></span>
+	</div>
+	
+	
+	<div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
+        <input class="input100" type="text" name="email" placeholder="Email address">
+		<span class="focus-input100"></span>
+    </div>
+    
+    <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+        <input class="input100" type="password" name="pass1" placeholder="Password">
+		<span class="focus-input100"></span>
+    </div>
+    
+    <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+        <input class="input100" type="password" name="pass2" placeholder="Password confirmation">
+		<span class="focus-input100"></span>
+	</div>
+
+	<div class="container-login100-form-btn m-t-17">
+        <button class="login100-form-btn" name="Create User" type="submit">
+			Login
+		</button>
+	</div>
+
+</form>
+
+
+
+
+
+<h1 >register to june</h1>
+<form method="POST" action="" class="login100-form validate-form flex-sb flex-w">
+
+    {% csrf_token %}
+
+
+
+    <div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+        <div class="input100" type="text" name="pass2" >
+            {{form.username}}
+            <span class="focus-input100"></span>
+        </div>
+    </div>
+
+
+    <div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
+        <div class="input100" type="text" name="email">
+            {{form.email}}
+            <span class="focus-input100"></span>
+        </div>
+    </div>
+    <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+        <div class="input100" type="text" name="email">
+            {{form.password1}}
+            <span class="focus-input100"></span>
+        </div>
+    </div>
+
+    <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+        <div class="input100" type="text" name="email">
+            {{form.password2}}
+            <span class="focus-input100"></span>
+        </div>
+    </div>
+
+    <div class="container-login100-form-btn m-t-17">
+        <button class="login100-form-btn" name="Create User" type="submit">
+			Login
+		</button>
+	</div>
+</form>
+
+{{form.errors}}
+
+
+
+
+<script>
+
+var form_fields = document.getElementsByTagName('input')
+form_fields[1].placeholder='Username';
+form_fields[2].placeholder='Email';
+form_fields[3].placeholder='Password';
+form_fields[4].placeholder='Password confirmation';
+
+
+for (var field in form_fields){	
+form_fields[field].className += ' input100 '
+}
+</script>
+
+
+{% endblock%}
