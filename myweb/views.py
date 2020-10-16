@@ -12,15 +12,17 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(req):
-	return render(req, 'myweb/index.html')
+	return render(req, 'myweb/base.html')
 
 def united(req):
 	return render(req, 'myweb/united.html')
 
+
+
 def loginPage(request):
 
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('index')
     else:
         if request.method == 'POST' :
             try:
@@ -31,7 +33,7 @@ def loginPage(request):
 
                 if user is not None:
                     login(request, user)
-                    return redirect('home')
+                    return redirect('index')
 
                 else:
                     messages.info(request, 'Username or Password is incorrect')
@@ -45,14 +47,14 @@ def loginPage(request):
 
 def logout(req):
     user_logout(req)
-    return redirect('home')
+    return redirect('index')
 
 @login_required(login_url='login') #เอาไว้ป้องกันเว็บ เวลารีเฟรชมันจะวิ่งไปหน้า login
 
 
 def registerPage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('index')
     else:
         form = CreateUserForm()
         if request.method == 'POST':
@@ -70,9 +72,8 @@ def registerPage(request):
             return render(request, 'myweb/register.html', context)
 
 
-
-def home(req):
-    return render(req, 'myweb/base.html')
+def contact(req):
+    return render(req,'myweb/contact.html')
 
 def detail(request, question_id):
     return render(request, 'myweb/detail.html')
