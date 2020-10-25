@@ -1,56 +1,61 @@
-{% extends 'myweb/baseUser.html' %}
-{% block title %} Login To The Moon {% endblock %}
+{% extends 'myweb/base_new.html' %}
+{% block title %}  About The Moon {% endblock %}
+
 
 {% block content %}
-<div class="container-contact100">
+<!--image-->
+<div class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          
+          <a href="https://zipimg.azureedge.net/blog/2019/10/2019-10-29_08-12-16_untitled-1.jpg" class="mb-3 d-block" data-fancybox="gal"><img src="https://zipimg.azureedge.net/blog/2019/10/2019-10-29_08-12-16_untitled-1.jpg" alt="Image" class="img-fluid"></a>
+          
+        </div>
 
-    <div class="wrap-contact100">
-        <form class="contact100-form validate-form">
-            <span class="contact100-form-title">
-                Send Us A Message
-            </span>
+<!--start detail-->
 
-            <div class="wrap-input100 validate-input" data-validate="Please enter your name">
-                <input class="input100" type="text" name="name" placeholder="Full Name">
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
-                <input class="input100" type="text" name="email" placeholder="E-mail">
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
-                <input class="input100" type="text" name="phone" placeholder="Phone">
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate = "Please enter your message">
-                <textarea class="input100" name="message" placeholder="Your Message"></textarea>
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-                    <span>
-                        <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
-                        Send
-                    </span>
-                </button>
-            </div>
-        </form>
+        <div class="col-lg-4 ml-auto">
+          <div class="">
+            <h3 class="mb-4">คุณเมียว </h3>
+            <p>ยินดีที่ได้รู้จักนะ ถ้าคุณกำลังอ่านอยู่ก็ขอบคุณมาก งั้นเรามารู้จักกันดีกว่า</p>
+            <p>เธอชอบขนมหวานไหม? ฉันชอบกินขนมหวานมากๆ มันทำให้โลกทั้งใบน่ากินขึ้นมาเลยล่ะ ไว้เรารู้จักกันแล้วพาฉันไปร้านขนมอร่อยๆ ด้วยนะ </p>
+            <p>เมื่อคืนมีคนโทรมาด้วย ฉันตกใจมากๆ เธอเป็นคนที่ฉันรู้จัก แต่เธอไม่รู้จักฉันหรอก 5555</p>
+            <p>ฉันคิดว่าเราจะสนทนากันด้วยดี แต่ฉันคิดผิด ฉันพูดอะไรไปสักอย่างนี่ล่ะ ฉันก็ไม่คิดว่ามันผิด แต่เธอเมินแล้วหายไปจากฉันเลย</p>
+            <p>และนั้นก็เป็นประโยคแรกและประโยคสุดท้ายที่เราได้คุยกัน อยากจิฮ้องไห้ <br>by คุณเมียว.</p>
+            
+            <ul class="list-unstyled mb-5">
+              <li class="mb-3">
+                <strong class="d-block text-black">พื้นที่:</strong>
+                มหาวิทยาลัยอุบลราชธานี, ตัวเมืองอุบลราชธานี, cental plaza ubonratchatani
+              </li>
+              <li class="mb-3">
+                <strong class="d-block text-black">อาชีพ:</strong>
+                นักศึกษา
+              </li>
+              <li class="mb-3">
+                <strong class="d-block text-black">อายุ:</strong>
+                20 ปี
+              </li>
+              <li class="mb-3">
+                <strong class="d-block text-black">ส่วนสูง:</strong>
+                171 ซม.
+              </li>
+              <li class="mb-3">
+                <strong class="d-block text-black">หมู่เลือด:</strong> 
+                B
+              </li>
+              <li class="mb-3">
+                <strong class="d-block text-black">งานอดิเรก:</strong>
+                เล่นกีตาร์, เล่นเกม, ว่ายน้ำ, นอนนนนนนนน
+              </li>
+            </ul>
+            <p><a href="#" class="btn btn-outline-black ">ทำความรู้จักเพิ่มเติม</a></p>
+          </div>
+        </div>
+      </div>
+      
     </div>
-</div>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
+  </div>
+<!--Endb detail-->
 {% endblock %}

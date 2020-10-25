@@ -33,13 +33,15 @@
 	<div class="container-contact100">
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="POST">
+				{% csrf_token %}
 				<span class="contact100-form-title">
 					Send Us A Message
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
 					<input class="input100" type="text" name="name" placeholder="Full Name">
+					
 					<span class="focus-input100"></span>
 				</div>
 
@@ -55,7 +57,7 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button class="contact100-form-btn" type="submit">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Send
@@ -65,6 +67,7 @@
 			</form>
 		</div>
 	</div>
+
 
 
 

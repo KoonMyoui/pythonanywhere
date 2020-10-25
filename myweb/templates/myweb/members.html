@@ -1,0 +1,84 @@
+{% extends 'myweb/base_new.html' %}
+{% block title %}  About The Moon {% endblock %}
+
+{% block intro %} Select your heart {% endblock %}
+{% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 100%;
+      border-radius: .3em;
+    }
+    .june{
+        padding: 3em;
+        display: grid;
+        grid-gap: 2em;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+    
+    }
+    
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    .container {
+      padding: 2px 16px;
+    }
+    </style>
+    </head>
+    
+    <div class="june" >
+        <div class="card">
+            <a href="/member/single/">
+        <img src="https://picsum.photos/200/300" alt="Avatar" style="width:100%" ></a>
+        <div class="container"  >
+            <h4><b><a href="/member/single/">IU</a></b></h4> 
+            <p > Idol & pop star</p> 
+        </div>
+        </div>
+        <div class="card"><a href="#">
+        <img src="https://www.fillmurray.com/200/300" alt="Avatar" style="width:100%"></a>
+        <div class="container">
+            <h4><b><a href="#">John Doe </a></b></h4> 
+            <p>Musicial & Engineer</p> 
+        </div>
+        </div>
+        <div class="card">
+        <img src="https://loremflickr.com/200/300" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>John Doe</b></h4> 
+            <p>Architect & Engineer</p> 
+        </div>
+        </div>
+        <div class="card">
+        <img src="https://placekitten.com/200/300" alt="Avatar" style="width:100%" >
+        <div class="container">
+            <h4><b>John Doe</b></h4> 
+            <p>Architect & Engineer</p> 
+        </div>
+        </div>
+        <div class="card">
+        <img src="https://baconmockup.com/200/300" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>John Doe</b></h4> 
+            <p>Architect & Engineer</p> 
+        </div>
+        </div>
+        <div class="card">
+        <img src="https://placebear.com/200/300" alt="Avatar" style="width:100% " >
+        <div class="container">
+            <h4><b>John Doe</b></h4> 
+            <p>Architect & Engineer</p> 
+        </div>
+        </div>
+    </div>
+    
+
+
+
+{% endblock %}

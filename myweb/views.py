@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import *
-from .forms import  CreateUserForm
+from .forms import  CreateUserForm , CreateOrderForm, CreateContactForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout as user_logout
 from django.contrib.auth.decorators import login_required
@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(req):
-	return render(req, 'myweb/base.html')
+	return render(req, 'myweb/home.html')
 
 def united(req):
 	return render(req, 'myweb/united.html')
@@ -49,7 +49,7 @@ def logout(req):
     user_logout(req)
     return redirect('index')
 
-@login_required(login_url='login') #เอาไว้ป้องกันเว็บ เวลารีเฟรชมันจะวิ่งไปหน้า login
+#เอาไว้ป้องกันเว็บ เวลารีเฟรชมันจะวิ่งไปหน้า login
 
 
 def registerPage(request):
@@ -68,8 +68,8 @@ def registerPage(request):
 
                 return redirect('login')
 
-            context = {'form':form}
-            return render(request, 'myweb/register.html', context)
+        context = {'form':form}
+        return render(request, 'myweb/register.html', context)
 
 
 def contact(req):
@@ -85,3 +85,35 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
+def Order(request):
+    form = CreateOrderForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+
+    context = {'form' : form}
+    return render(request, 'myweb/order.html', context )
+
+def CreaateContact(request):
+    form = CreateContactForm()
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+
+    context = {'form' : form}
+    return render(request, 'myweb/contact.html', context)
+
+def about(request):
+    return render(request, 'myweb/about.html')
+
+def Newbase(request):
+    return render(request, 'myweb/base_new.html')
+
+def members(request):
+    return render(request, 'myweb/members.html')
+
+def single_member(request):
+    return render(request, 'myweb/single_member.html')
+
+def service(request):
+    return render(request, 'myweb/service.html')
